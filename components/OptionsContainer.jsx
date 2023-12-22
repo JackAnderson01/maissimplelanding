@@ -42,10 +42,8 @@ const OptionsContainer = () => {
     },
   ];
   return (
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
+    <div
+      
       className="relative w-full h-auto px-6 md:px-8 lg:px-20 mt-14 md:mt-14 flex flex-col justify-center items-center gap-12 bg-white"
     >
       <img
@@ -83,7 +81,7 @@ const OptionsContainer = () => {
 
         <span className="w-[205px] h-[205px] rounded-full bg-[#8cd790]/[0.3] shadow-lg shadow-[#8cd790]/[0.3] absolute -bottom-[120px] -left-3 blur-3xl" />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
