@@ -31,19 +31,19 @@ const Footer = () => {
               Home
             </Link>
             <a
-              href="/contact-us/"
+              href="/contactus/"
               className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
             >
               Contact
             </a>
             <Link
-              href="/terms-of-services/"
+              href="/terms/"
               className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
             >
               Terms of Service
             </Link>
             <Link
-              href="/privacy-policy/"
+              href="/privacy/"
               className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
             >
               Privacy Policy
