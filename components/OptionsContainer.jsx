@@ -72,7 +72,7 @@ const OptionsContainer = () => {
       <div className="relative w-full md:w-[90%] lg::w-1/2 h-auto flex flex-col md:flex-row gap-14  justify-center items-center">
         <span className="w-[205px] h-[205px] rounded-full bg-[#8cd790]/[0.3] shadow-lg shadow-[#8cd790]/[0.3] absolute -top-[100px] -right-3 blur-3xl" />
 
-        {serviceType ? serviceType.map((obj, key) => {
+        {serviceType.length > 0 ? serviceType.map((obj, key) => {
           return <OptionsCard key={key} obj={obj} />;
         }) : dummyArr.map((obj, key) => {
           return <OptionsCard key={key} obj={obj} />;
