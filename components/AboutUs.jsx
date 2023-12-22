@@ -32,7 +32,7 @@ const AboutUs = () => {
           />
         </motion.div>
 
-        <motion.div variants={fadeIn("left", "tween", 0.5, 1)} className="w-[60%] lg:w-1/2 xl:w-1/3 h-auto flex item-center justify-start ">
+        <motion.div variants={fadeIn("left", "tween", 0.5, 1)} className="w-[90%] lg:w-1/2 xl:w-1/3 h-auto flex item-center justify-start ">
           <span className="text-black text-lg text-justify font-medium">
             At MaidSimpl, we believe in a cleaner, more organized world. Amidst
             the chaos of modern life, everyone yearns for simplicity,

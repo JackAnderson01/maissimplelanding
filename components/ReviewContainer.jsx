@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
@@ -12,6 +12,34 @@ import { motion } from "framer-motion";
 
 
 const ReviewContainer = () => {
+
+  
+  const [windowWidth, setWindowWidth] = useState(3);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setWindowWidth(window.innerWidth);
+    }, 1000);
+
+    return () => {
+      // Clear the timeout when the component is unmounted
+      clearTimeout(timeoutId);
+    };
+  }, []); // Run this effect only once on mount
+
+  // Rest of your component...
+
+  // Determine slidesPerView based on windowWidth
+  const slidesPerView = windowWidth
+    ? windowWidth > 1500
+      ? 4
+      : windowWidth > 1100
+      ? 3
+      : windowWidth > 768
+      ? 2
+      : 1
+    : 3;
+
   const dummyArr = [
     {
       text: "I've tried multiple cleaning services before, but MaidSimpl has truly made the process so effortless. The 'Deep Clean' option left my home feeling brand new!",
@@ -58,9 +86,7 @@ Our Clients
         <Swiper
           spaceBetween={20}
           modules={[Pagination]}
-          slidesPerView={
-          3
-          }
+          slidesPerView={slidesPerView}
           className=" mySwiper swiper-h relative"
           pagination={{
             clickable: true,
