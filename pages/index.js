@@ -21,8 +21,8 @@ const Home = () => {
         />
         <link rel="icon" href="/img/favicon.png" />
       </Head>
-      <div>
-        <video autoPlay muted>
+      <div className="w-screen h-screen">
+        <video autoPlay muted className="w-full h-full">
           <source src="/video/MaidSimpl2.mp4" type="video/mp4" />
           Sorry, your browser doesn't support videos.
         </video>
