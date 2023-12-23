@@ -11,7 +11,7 @@ module.exports = {
       user: "ubuntu",
       host: "3.90.82.236",
       ref: "origin/main",
-      repo: "https://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@github.com/DigniteStudios/MaidSimpl-Landing-WebApp.git",
+      repo: "https://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@github.com/DigniteStudios/MaidSimpl-Landing-WebApp.git",
       path: "/home/ubuntu",
       "pre-deploy-local": "",
       "post-deploy":
