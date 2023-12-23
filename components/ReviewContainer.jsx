@@ -32,7 +32,7 @@ const ReviewContainer = () => {
   // Determine slidesPerView based on windowWidth
   const slidesPerView = windowWidth
     ? windowWidth > 1500
-      ? 4
+      ? 3
       : windowWidth > 1100
       ? 3
       : windowWidth > 768

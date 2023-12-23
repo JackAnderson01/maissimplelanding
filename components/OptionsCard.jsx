@@ -11,7 +11,7 @@ const OptionsCard = ({obj}) => {
 
       <span className="text-6xl font-extrabold text-[#8cd790]">${obj.price}</span>
 
-      <Link href="/" className="w-32 h-12 flex items-center justify-center rounded-md group-hover:bg-[#8cd790] group-hover:text-white bg-black text-white font-semibold shadow-sm  text-md">
+      <Link href="https://app.maidsimpl.com/login" className="w-32 h-12 flex items-center justify-center rounded-md group-hover:bg-[#8cd790] group-hover:text-white bg-black text-white font-semibold shadow-sm  text-md">
         Book Now
       </Link>
     </div>

@@ -40,13 +40,13 @@ const Footer = () => {
               href="/terms/"
               className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
             >
-              Terms of Service
+              Terms
             </Link>
             <Link
               href="/privacy/"
               className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
             >
-              Privacy Policy
+              Privacy
             </Link>
             <a
               href="#faq"
@@ -56,7 +56,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="w-full h-auto flex flex-col gap-4 justify-start items-center  lg:items-start">
+          <div className="w-full h-auto flex gap-2 justify-start items-center  lg:items-start">
             <div className="w-full lg:w-1/2 h-auto text-xl flex justify-start gap-4 items-center">
                 <IoMdMail className="text-[#8cd790] w-6 text-3xl"/>
                 <span className="text-sm lg:text-md font-medium">

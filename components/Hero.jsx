@@ -44,7 +44,7 @@ const Hero = () => {
       </motion.div>
 
       <Link
-        href="/"
+        href="https://app.maidsimpl.com/login"
         className="md:hidden  w-40 h-12 rounded-xl flex items-center text-lg font-semibold text-white transition-all duration-300 hover:bg-[#8cd790] justify-center bg-black shadow-sm shadow-[#1c1c1c]"
       >
         Book Now
