@@ -1,27 +1,43 @@
-import nodemailer from "nodemailer";
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
 export default async function sendEmail(subject, message, email) {
-  const transporter = nodemailer.createTransport({
-    service: "Outlook",
-    auth: {
-      user: "dignite.studios.verify@outlook.com",
-      pass: "L@un(hbox1234",
+  // Set up SES client
+  const sesClient = new SESClient({
+    region: process.env.AWS_SES_REGION,
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     },
   });
 
-  const mailOptions = {
-    from: "dignite.studios.verify@outlook.com",
-    to: email,
-    subject: subject,
-    html: message,
+  // Create the email parameters
+  const params = {
+    Destination: {
+      ToAddresses: [email],
+    },
+    Message: {
+      Body: {
+        Html: {
+          Charset: "UTF-8",
+          Data: message,
+        },
+      },
+      Subject: {
+        Charset: "UTF-8",
+        Data: subject,
+      },
+    },
+    Source: process.env.AWS_SES_SENDER,
   };
 
-  return transporter.sendMail(mailOptions, async (error, info) => {
-    if (error) {
-      console.error(error);
-      return false;
-    } else {
-      return true;
-    }
-  });
+  try {
+    // Send the email
+    const command = new SendEmailCommand(params);
+    const result = await sesClient.send(command);
+    console.log("Email sent:", result);
+    return true;
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return false;
+  }
 }

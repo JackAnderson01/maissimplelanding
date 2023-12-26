@@ -8,12 +8,8 @@ const OptionsContainer = () => {
   const [serviceType, setServiceType] = useState([]);
 
   const getServiceType = () => {
-    // const token =
-    //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6ImFsNTY1QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2NzgiLCJpYXQiOjE3MDMxODg3MzYsImV4cCI6MTcwMzc5MzUzNn0.892ty6JvSpnb6Dm2BnE_69MCFuOaYjWWejRtkTgFDkI";
-
     const headers = {
       "Content-Type": "application/json",
-      // Token: token,
     };
 
     axios
