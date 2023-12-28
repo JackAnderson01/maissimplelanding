@@ -162,7 +162,7 @@ async function runScheduledEmails() {
   }
 }
 
-setInterval(runScheduledEmails, 1000 * 60); // Run the scheduler every minute
+// setInterval(runScheduledEmails, 1000 * 60); // Run the scheduler every minute
 
 function addDays(bookingExists) {
   const originalDate = moment(bookingExists.date, "MM/DD/YYYY");
