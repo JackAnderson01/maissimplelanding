@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import LoginButtonModal from './LoginButtonModal';
 
-function Navbar () {
+function Navbar() {
 
 
   const showLoginBtnModal = () => {
@@ -26,13 +26,13 @@ function Navbar () {
   return (
     <div className="w-full z-50 bg-transparent px-6 md:px-8 lg:px-20 h-28 flex justify-between items-center ">
       <Link href="/">
-      <img src="/assets/logo.svg" alt="maid-simple" />
+        <img src="/assets/logo.svg" alt="maid-simple" />
       </Link>
       <div
         id="sidebar"
         className="hidden absolute top-[5.8rem] right-2 rounded-3xl lg:rounded-none transition-all duration-200 text-left  bg-white lg:bg-transparent z-40 shadow-md shadow-gray-400 lg:shadow-none translate-x-64 lg:translate-x-0   lg:static w-56 lg:w-auto h-auto  lg:h-full lg:flex flex-col lg:flex-row gap-6 justify-start items-start p-8 lg:p-0 lg:justify-center lg:items-center text-gray-800 mx-auto"
       >
-         <Link
+        <Link
           href="/"
           className=" text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  active uppercase"
         >
@@ -45,7 +45,7 @@ function Navbar () {
           About
         </Link>
         <Link
-          href="/"
+          href="https://app.maidsimpl.com/auth/login"
           className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
         >
           Book Us
@@ -67,7 +67,7 @@ function Navbar () {
       <div className="flex gap-2 items-center justify-start">
         <div className="relative flex flex-col justify-start items-start">
           <button
-          id="login-btn"
+            id="login-btn"
             onClick={showLoginBtnModal}
             className="w-32 h-8 lg:h-10 border-2 border-gray-800 rounded-md flex items-center justify-center  transition-all  duration-200 hover:text-white hover:bg-[#8CD790] hover:border-[#8CD790] text-md font-medium"
           >
