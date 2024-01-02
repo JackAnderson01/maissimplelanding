@@ -31,7 +31,7 @@ const Hero = () => {
           </span>
 
           <Link
-            href="/"
+            href="https://app.maidsimpl.com/auth/login"
             className="hidden md:flex  w-40 h-12 rounded-xl  items-center text-lg font-semibold text-white transition-all duration-300 hover:bg-[#8cd790] justify-center bg-black shadow-sm shadow-[#1c1c1c]"
           >
             Book Now
@@ -39,7 +39,10 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <motion.div variants={fadeIn("left", "tween", 0.2, 1)} className="w-full lg:w-1/2 h-full flex items-center  justify-center">
+      <motion.div
+        variants={fadeIn("left", "tween", 0.2, 1)}
+        className="w-full lg:w-1/2 h-full flex items-center  justify-center"
+      >
         <img src="/assets/hero_banner.png" alt="hero_banner" className=" " />
       </motion.div>
 

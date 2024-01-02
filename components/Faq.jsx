@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 const Faq = () => {
   return (
-    <motion.div variants={staggerContainer} initial="hidden" whileInView="show"
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
       id="faq"
       className="relative w-full h-auto px-6 py-6 md:px-8 md:py-14 lg:px-20 lg:py-8 mt-10 flex flex-col justify-center items-center gap-12 bg-[#fff]"
     >
@@ -13,7 +16,8 @@ const Faq = () => {
       </h1>
 
       <div className="w-full h-auto  md:px-6 lg:px-14 flex flex-col gap-3 justify-start items-start">
-        <motion.div variants={fadeIn("right", "tween", 0.5, 1)}
+        <motion.div
+          variants={fadeIn("right", "tween", 0.5, 1)}
           id="accordion-collapse"
           data-accordion="collapse"
           className="w-full"
@@ -32,7 +36,8 @@ const Faq = () => {
               aria-controls="accordion-collapse-body-1"
             >
               <span>
-              How does Maid Simpl differentiate between Base Clean and Deep Clean?
+                How does Maid Simpl differentiate between Base Clean and Deep
+                Clean?
               </span>
               <svg
                 data-accordion-icon
@@ -59,13 +64,18 @@ const Faq = () => {
           >
             <div className="p-5 border bg-[#EEFEF4] border-b-0 rounded-md mt-1 border-gray-200 ">
               <p className="mb-2 text-gray-500 ">
-              Our "Base Clean" covers essential cleaning tasks ensuring your home is tidy and fresh. The "Deep Clean" is a thorough add-on that ensures the cleaners have the extra time for areas that are a bit more messy. This makes it ideal for first-time cleanings or homes needing extra attention.
+                Our "Base Clean" covers essential cleaning tasks ensuring your
+                home is tidy and fresh. The "Deep Clean" is a thorough add-on
+                that ensures the cleaners have the extra time for areas that are
+                a bit more messy. This makes it ideal for first-time cleanings
+                or homes needing extra attention.
               </p>
             </div>
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn("left", "tween", 0.5, 1)}
+        <motion.div
+          variants={fadeIn("left", "tween", 0.5, 1)}
           id="accordion-collapse"
           data-accordion="collapse"
           className="w-full"
@@ -111,12 +121,14 @@ const Faq = () => {
           >
             <div className="p-5 border bg-[#EEFEF4] rounded-md mt-1 border-b-0 border-gray-200 ">
               <p className="mb-2 text-gray-500 ">
-              Please reach out to support before booking a cleaning to best assist you. The add-ons we have listed are the most requested. We will do our best to fulfill all of your cleaning needs!
+                Please reach out to support before booking a cleaning to best
+                assist you. The add-ons we have listed are the most requested.
+                We will do our best to fulfill all of your cleaning needs!
               </p>
               <p className="text-gray-500 ">
                 Check out this guide to learn how to{" "}
                 <a
-                  href="/docs/getting-started/introduction/"
+                  href="https://app.maidsimpl.com/auth/login"
                   className="text-[#8cd790]  hover:underline"
                 >
                   get started
@@ -128,7 +140,8 @@ const Faq = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn("right", "tween", 0.5, 1)}
+        <motion.div
+          variants={fadeIn("right", "tween", 0.5, 1)}
           id="accordion-collapse"
           data-accordion="collapse"
           className="w-full"
@@ -146,9 +159,7 @@ const Faq = () => {
               aria-expanded="true"
               aria-controls="accordion-collapse-body-1"
             >
-              <span>
-              Can we only book on the app?
-              </span>
+              <span>Can we only book on the app?</span>
               <svg
                 data-accordion-icon
                 className="w-3 h-3 rotate-180 shrink-0"
@@ -174,14 +185,16 @@ const Faq = () => {
           >
             <div className="p-5 border bg-[#EEFEF4] rounded-md mt-1 border-b-0 border-gray-200 ">
               <p className="mb-2 text-gray-500 ">
-              No, MaidSimpl has the app to streamline the booking process but if you prefer the web our website will always be live and accepting bookings
+                No, MaidSimpl has the app to streamline the booking process but
+                if you prefer the web our website will always be live and
+                accepting bookings
               </p>
-              
             </div>
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn("left", "tween", 0.5, 1)}
+        <motion.div
+          variants={fadeIn("left", "tween", 0.5, 1)}
           id="accordion-collapse"
           data-accordion="collapse"
           className="w-full"
@@ -199,9 +212,7 @@ const Faq = () => {
               aria-expanded="true"
               aria-controls="accordion-collapse-body-1"
             >
-              <span>
-              Will I get updates before my cleaning?
-              </span>
+              <span>Will I get updates before my cleaning?</span>
               <svg
                 data-accordion-icon
                 className="w-3 h-3 rotate-180 shrink-0"
@@ -227,13 +238,16 @@ const Faq = () => {
           >
             <div className="p-5 border bg-[#EEFEF4] rounded-md mt-1 border-b-0 border-gray-200 ">
               <p className="mb-2 text-gray-500 ">
-              Yes, we have push notifications and automated alerts via text & email. All notification settings are customizable in your account settings.
+                Yes, we have push notifications and automated alerts via text &
+                email. All notification settings are customizable in your
+                account settings.
               </p>
             </div>
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn("right", "tween", 0.5, 1)}
+        <motion.div
+          variants={fadeIn("right", "tween", 0.5, 1)}
           id="accordion-collapse"
           data-accordion="collapse"
           className="w-full"
@@ -251,9 +265,7 @@ const Faq = () => {
               aria-expanded="true"
               aria-controls="accordion-collapse-body-1"
             >
-              <span>
-              Can you choose your own cleaner?
-              </span>
+              <span>Can you choose your own cleaner?</span>
               <svg
                 data-accordion-icon
                 className="w-3 h-3 rotate-180 shrink-0"
@@ -279,13 +291,16 @@ const Faq = () => {
           >
             <div className="p-5 border bg-[#EEFEF4] rounded-md mt-1 border-b-0 border-gray-200 ">
               <p className="mb-2 text-gray-500 ">
-              Yes, you have the option to choose any available cleaner in your area along with the option to re-book cleaners you've used in the past.
+                Yes, you have the option to choose any available cleaner in your
+                area along with the option to re-book cleaners you've used in
+                the past.
               </p>
             </div>
           </div>
         </motion.div>
 
-        <motion.div variants={fadeIn("left", "tween", 0.5, 1)}
+        <motion.div
+          variants={fadeIn("left", "tween", 0.5, 1)}
           id="accordion-collapse"
           data-accordion="collapse"
           className="w-full"
@@ -304,7 +319,7 @@ const Faq = () => {
               aria-controls="accordion-collapse-body-1"
             >
               <span>
-              Do the cleaners always arrive at the exact booking time?
+                Do the cleaners always arrive at the exact booking time?
               </span>
               <svg
                 data-accordion-icon
@@ -331,7 +346,9 @@ const Faq = () => {
           >
             <div className="p-5 border bg-[#EEFEF4] rounded-md mt-1 border-b-0 border-gray-200 ">
               <p className="mb-2 text-gray-500 ">
-              No, that is an estimate. Please allow our cleaners a 30 minute window for traffic, weather, or any other unpredictable issues that may occur.
+                No, that is an estimate. Please allow our cleaners a 30 minute
+                window for traffic, weather, or any other unpredictable issues
+                that may occur.
               </p>
             </div>
           </div>
