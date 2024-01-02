@@ -1,14 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiLogoInstagramAlt } from "react-icons/bi";
-import {  FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Link from "next/link";
+import axios from "axios";
 
 const ContactUs = () => {
+
+  // Integration code:
+
+  // States:
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false)
+
+
+
+  const sendMessage = () => {
+
+    setLoading(true);
+
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    const params = {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      message: message
+    };
+
+    if (email == "") {
+      alert("Email is required");
+    } else if (message == "") {
+      alert("You must add some message to sent");
+    } else {
+
+      axios
+        .post("/api/landing/contactUs", params, { headers })
+        .then((response) => {
+          // proceed
+          setSuccess(true);
+          setLoading(false)
+        })
+        .catch((error) => {
+          setError(true);
+          setLoading(false);
+          console.log(error);
+        });
+
+    }
+
+  }
+
+
+
+
+
+
+
+
   return (
     <div className=" w-screen h-screen lg:h-[100vh] flex items-end gap-8">
       <div className="relative w-1/3 hidden h-full rounded-r-[50px] lg:flex items-center justify-end bg-[#d9d9d9]/[0.12]">
-        
+
         <img src="/assets/contactus.png" alt="contact_us_banner" />
       </div>
 
@@ -37,6 +97,8 @@ const ContactUs = () => {
                   </label>
                   <input
                     type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     id="first_name"
                     className="border-2 h-[57px] border-gray-200 text-gray-800 text-md outline-none rounded-xl focus:ring-gray-400 focus:border-gray-400 block w-full px-3.5 py-2.5"
                     required
@@ -52,6 +114,8 @@ const ContactUs = () => {
                   <input
                     type="text"
                     id="last_name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                     className="border-2 h-[57px] border-gray-200 text-gray-800 text-md outline-none rounded-xl focus:ring-gray-400 focus:border-gray-400 block w-full px-3.5 py-2.5"
                     required
                   />
@@ -68,6 +132,8 @@ const ContactUs = () => {
                 <input
                   type="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="border-2 h-[57px] border-gray-200 text-gray-800 text-md outline-none rounded-xl focus:ring-gray-400 focus:border-gray-400 block w-full px-3.5 py-2.5"
                   required
                 />
@@ -82,13 +148,15 @@ const ContactUs = () => {
                 </label>
                 <textarea
                   id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="border-2 h-[150px] border-gray-200 resize-none text-gray-800 text-md outline-none rounded-xl focus:ring-gray-400 focus:border-gray-400 block w-full px-3.5 py-2.5"
                   required
                 ></textarea>
               </div>
 
-              <button className="bg-[#000] shadow-sm shadow-[#1c1c1c] h-[57px] text-[#fff] text-lg font-semibold outline-none rounded-xl transition-all duration-100 hover:bg-opacity-90 block w-full p-2.5">
-                Send Message
+              <button onClick={sendMessage} className={`bg-[#8cd790] ${success && "bg-[#8cd790]"} ${error && "bg-red-500"}  shadow-sm shadow-[#1c1c1c] h-[57px] text-[#fff] text-lg font-semibold outline-none rounded-xl transition-all duration-100 hover:bg-opacity-90 block w-full p-2.5`}>
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
           </form>
