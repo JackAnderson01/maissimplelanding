@@ -140,6 +140,7 @@ const createBookingPrice = async (
     }
   }
 
+  price = parseFloat(price.toFixed(2));
   return price;
 };
 

@@ -8,16 +8,12 @@ const OptionsContainer = () => {
   const [serviceType, setServiceType] = useState([]);
 
   const getServiceType = () => {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6ImFsNTY1QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2NzgiLCJpYXQiOjE3MDMxODg3MzYsImV4cCI6MTcwMzc5MzUzNn0.892ty6JvSpnb6Dm2BnE_69MCFuOaYjWWejRtkTgFDkI";
-
     const headers = {
       "Content-Type": "application/json",
-      Token: token,
     };
 
     axios
-      .get("/api/admin/serviceType/getServiceTypesObject", { headers })
+      .get("/api/admin/serviceType/getServiceTypePrice", { headers })
       .then((response) => {
         setServiceType(response.data.result);
         console.log("Service Type", response.data.result);
@@ -42,10 +38,7 @@ const OptionsContainer = () => {
     },
   ];
   return (
-    <div
-      
-      className="relative w-full h-auto px-6 md:px-8 lg:px-20 mt-14 md:mt-14 flex flex-col justify-center items-center gap-12 bg-white"
-    >
+    <div className="relative w-full h-auto px-6 md:px-8 lg:px-20 mt-14 md:mt-14 flex flex-col justify-center items-center gap-12 bg-white">
       <img
         src="/assets/flower.svg"
         alt="flower"
@@ -72,12 +65,13 @@ const OptionsContainer = () => {
       <div className="relative w-full md:w-[90%] lg::w-1/2 h-auto flex flex-col md:flex-row gap-14  justify-center items-center">
         <span className="w-[205px] h-[205px] rounded-full bg-[#8cd790]/[0.3] shadow-lg shadow-[#8cd790]/[0.3] absolute -top-[100px] -right-3 blur-3xl" />
 
-        {serviceType.length > 0 ? serviceType.map((obj, key) => {
-          return <OptionsCard key={key} obj={obj} />;
-        }) : dummyArr.map((obj, key) => {
-          return <OptionsCard key={key} obj={obj} />;
-        })
-      }
+        {serviceType.length > 0
+          ? serviceType.map((obj, key) => {
+              return <OptionsCard key={key} obj={obj} />;
+            })
+          : dummyArr.map((obj, key) => {
+              return <OptionsCard key={key} obj={obj} />;
+            })}
 
         <span className="w-[205px] h-[205px] rounded-full bg-[#8cd790]/[0.3] shadow-lg shadow-[#8cd790]/[0.3] absolute -bottom-[120px] -left-3 blur-3xl" />
       </div>
