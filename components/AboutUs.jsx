@@ -28,7 +28,7 @@ const AboutUs = () => {
           <img
             src="/assets/aboutbanner.jpg"
             alt="about_banner"
-            className="w-full h-auto md:w-[400px] md:h-auto z-30"
+            className="w-full h-auto md:h-[400px] md:w-auto  z-30"
           />
         </motion.div>
 
