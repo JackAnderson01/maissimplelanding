@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Link from 'next/link'
 import LoginButtonModal from './LoginButtonModal';
+import { useRouter } from 'next/router';
 
 function Navbar() {
+
 
 
   const showLoginBtnModal = () => {
@@ -23,6 +25,34 @@ function Navbar() {
     sidebar.classList.toggle("hidden");
     sidebar.classList.toggle("flex")
   };
+
+  const router = useRouter();
+
+  const navigateTo = (link) => {
+    router.push("/home");
+      const scrollToElement = () => {
+        const elem = document.getElementById(link);
+
+        if (elem) {
+          elem.scrollIntoView({
+            behavior: 'smooth',
+          });
+        }
+      }
+
+      // Navigate to the root path
+
+      // Scroll to the element after a delay
+      const timeoutId = setTimeout(scrollToElement, 1000);
+
+      // Clean up the timeout to avoid potential memory leaks
+      return () => clearTimeout(timeoutId);
+  };
+
+  
+
+
+
   return (
     <div className="w-full z-50 bg-transparent px-6 md:px-8 lg:px-20 h-28 flex justify-between items-center ">
       <Link href="/">
@@ -38,24 +68,24 @@ function Navbar() {
         >
           Home
         </Link>
-        <Link
-          href="#about-us"
+        <button
+          onClick={() => navigateTo("about-us")}
           className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
         >
           About
-        </Link>
+        </button>
         <Link
           href="https://app.maidsimpl.com/auth/login"
           className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
         >
           Book Us
         </Link>
-        <Link
-          href="#faq"
+        <button
+          onClick={() => navigateTo("faq")}
           className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"
         >
           faq
-        </Link>
+        </button>
         <Link
           href="/contactus/"
           className="text-[18px] font-medium transition-all duration-150 hover:text-[#8CD790]  uppercase"

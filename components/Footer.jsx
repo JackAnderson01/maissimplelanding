@@ -59,16 +59,16 @@ const Footer = () => {
           <div className="w-full h-auto flex gap-2 justify-start items-center  lg:items-start">
             <div className="w-full lg:w-1/2 h-auto text-xl flex justify-start gap-4 items-center">
                 <IoMdMail className="text-[#8cd790] w-6 text-3xl"/>
-                <span className="text-sm lg:text-md font-medium">
-                Support@maidsimpl.com
-                </span>
+                <a href="mailto:support@madisimpl.com" className="text-sm lg:text-md font-medium">
+                support@maidsimpl.com
+                </a>
             </div>
 
             <div className="w-full lg:w-1/2 h-auto text-xl flex justify-start gap-4 items-center">
                 <HiPhone className="text-[#8cd790] w-6 text-2xl"/>
-                <span className="text-sm lg:text-md font-medium">
+                <a href="tel:(951)-216-3092" className="text-sm lg:text-md font-medium">
                 (951)-216-3092
-                </span>
+                </a>
             </div>
           </div>
         </div>
